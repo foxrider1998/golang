@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -15,6 +16,8 @@ func main() {
 		polindrone(text)
 	} else {
 		vocalOrKonsonan(text)
+
+		println("================================================polindrone===========================================")
 	}
 }
 func vocalOrKonsonan(huruf string) {
@@ -30,18 +33,17 @@ func vocalOrKonsonan(huruf string) {
 
 }
 func polindrone(input string) {
-	println("================================================polindrone===========================================")
-
+	input = strings.ToLower(input)
 	for i := 0; i < len(input)/2; i++ {
 		awal := string(input[i])
 		akhir := string(input[(len(input) - 2 - i)])
 
 		if awal != akhir {
 
-			print(input, "bukan palindrone")
+			print("bukan palindrone")
 			return
 		}
 
 	}
-	print(input, " merupakan palindrone \n")
+	print(" merupakan palindrone \n")
 }
